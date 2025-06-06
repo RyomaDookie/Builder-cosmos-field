@@ -18,6 +18,36 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        "din-medium": [
+          "DIN Pro",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+        "din-bold": [
+          "DIN Pro",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+        sans: [
+          "DIN Pro",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+      },
+      fontWeight: {
+        "din-medium": "500",
+        "din-bold": "700",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
