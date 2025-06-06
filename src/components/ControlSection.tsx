@@ -10,7 +10,10 @@ import { useTicketTimer } from "@/hooks/useTicketTimer";
 
 export const ControlSection = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const { currentTime, activationDate } = useTicketTimer();
+  const { currentTime } = useTicketTimer();
+
+  // Static QR code value that doesn't change
+  const qrCodeValue = "ATGARIHA4-27609/2068346-090821-05062025";
 
   return (
     <div className="mx-4 mt-4">
