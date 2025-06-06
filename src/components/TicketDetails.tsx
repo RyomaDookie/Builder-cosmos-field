@@ -5,9 +5,21 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { useTicketTimer } from "@/hooks/useTicketTimer";
 
 export const TicketDetails = () => {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
+  const { activationDate } = useTicketTimer();
+
+  // Calculate issue time (5 minutes before activation)
+  const issueDate = new Date();
+  issueDate.setMinutes(issueDate.getMinutes() - 35); // 30 min activation + 5 min before
+  const issueDay = issueDate.getDate().toString().padStart(2, "0");
+  const issueMonth = (issueDate.getMonth() + 1).toString().padStart(2, "0");
+  const issueYear = issueDate.getFullYear();
+  const issueHours = issueDate.getHours().toString().padStart(2, "0");
+  const issueMinutes = issueDate.getMinutes().toString().padStart(2, "0");
+  const issueDateStr = `${issueDay}/${issueMonth}/${issueYear} - ${issueHours}:${issueMinutes}`;
 
   return (
     <div className="mx-4 mt-4 mb-8">
@@ -15,7 +27,7 @@ export const TicketDetails = () => {
       <div className="mb-4">
         <div className="text-sm text-gray-600 mb-1">Emesso il:</div>
         <div className="text-base font-medium text-gray-900">
-          05/06/2025 - 08:39
+          {issueDateStr}
         </div>
       </div>
 

@@ -6,9 +6,11 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { useTicketTimer } from "@/hooks/useTicketTimer";
 
 export const ControlSection = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const { currentTime, activationDate } = useTicketTimer();
 
   return (
     <div className="mx-4 mt-4">
@@ -37,7 +39,7 @@ export const ControlSection = () => {
             <div className="flex justify-center mb-4">
               <div className="bg-white p-4 rounded-lg">
                 <QRCode
-                  value="ATGARIHA4-27609/2068346-09:22:21-05/06/2025"
+                  value={`ATGARIHA4-27609/2068346-${currentTime}-${activationDate}`}
                   size={160}
                   style={{ height: "auto", maxWidth: "100%", width: "100%" }}
                 />
@@ -59,7 +61,7 @@ export const ControlSection = () => {
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-orange-500" />
                 <span className="text-lg font-mono font-bold text-gray-900">
-                  09:22:21
+                  {currentTime}
                 </span>
               </div>
               <div className="flex items-center gap-2">
