@@ -8,14 +8,14 @@ export const TicketTimer = () => {
       <div
         className={`text-white rounded-lg p-4 ${isExpired ? "bg-red-600" : "bg-green-600"}`}
       >
-        <div className="text-sm opacity-90 mb-1">
+        <div className="text-sm opacity-90 mb-1 font-din-medium">
           {isExpired ? "Biglietto scaduto" : "Tempo restante:"}
         </div>
-        <div className="text-xl font-bold mb-3">
+        <div className="text-xl font-din-bold mb-3">
           {isExpired ? "0m" : remainingTime}
         </div>
-        <div className="text-sm opacity-90">Attivato il:</div>
-        <div className="text-base font-medium">{activationTime}</div>
+        <div className="text-sm opacity-90 font-din-medium">Attivato il:</div>
+        <div className="text-base font-din-medium">{activationTime}</div>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export const ControlSection = () => {
               <div className="bg-orange-500 p-2 rounded">
                 <div className="w-4 h-4 bg-white rounded-sm"></div>
               </div>
-              <span className="font-medium text-gray-900">
+              <span className="font-din-medium text-gray-900">
                 Controllo e validazione
               </span>
             </div>
@@ -53,7 +53,7 @@ export const ControlSection = () => {
             <div className="text-center mb-6">
               <a
                 href="#"
-                className="text-orange-500 font-medium underline text-sm"
+                className="text-orange-500 font-din-medium underline text-sm"
               >
                 Come usare i lettori QR
               </a>
@@ -63,13 +63,13 @@ export const ControlSection = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-orange-500" />
-                <span className="text-lg font-mono font-bold text-gray-900">
+                <span className="text-lg font-mono font-din-bold text-gray-900">
                   {currentTime}
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <Lock className="w-4 h-4 text-gray-500" />
-                <span className="text-gray-700 font-medium">277</span>
+                <span className="text-gray-700 font-din-medium">277</span>
               </div>
             </div>
           </div>

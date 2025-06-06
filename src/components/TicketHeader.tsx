@@ -7,7 +7,7 @@ export const TicketHeader = () => {
       <Button variant="ghost" size="sm" className="p-1">
         <ChevronLeft className="w-6 h-6 text-gray-700" />
       </Button>
-      <h1 className="text-lg font-medium text-gray-900">Ticket attivo</h1>
+      <h1 className="text-lg font-din-medium text-gray-900">Ticket attivo</h1>
       <div className="w-8"></div>
     </div>
   );

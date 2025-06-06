@@ -13,7 +13,7 @@ export const TicketDetails = () => {
 
   // Calculate issue time (5 minutes before activation)
   const issueDate = new Date();
-  issueDate.setMinutes(issueDate.getMinutes() - 35); // 30 min activation + 5 min before
+  issueDate.setMinutes(issueDate.getMinutes() - 15); // 10 min activation + 5 min before
   const issueDay = issueDate.getDate().toString().padStart(2, "0");
   const issueMonth = (issueDate.getMonth() + 1).toString().padStart(2, "0");
   const issueYear = issueDate.getFullYear();
@@ -25,27 +25,29 @@ export const TicketDetails = () => {
     <div className="mx-4 mt-4 mb-8">
       {/* Issue Date */}
       <div className="mb-4">
-        <div className="text-sm text-gray-600 mb-1">Emesso il:</div>
-        <div className="text-base font-medium text-gray-900">
+        <div className="text-sm text-gray-600 mb-1 font-din-medium">
+          Emesso il:
+        </div>
+        <div className="text-base font-din-medium text-gray-900">
           {issueDateStr}
         </div>
       </div>
 
       {/* Cost */}
       <div className="flex items-center justify-between mb-6">
-        <div className="text-xl font-medium text-gray-900">Costo</div>
-        <div className="text-xl font-bold text-gray-900">2,20 €</div>
+        <div className="text-xl font-din-medium text-gray-900">Costo</div>
+        <div className="text-xl font-din-bold text-gray-900">2,20 €</div>
       </div>
 
       {/* Details Section */}
       <Collapsible open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
         <CollapsibleTrigger className="w-full">
           <div className="flex items-center justify-between">
-            <span className="text-base font-medium text-gray-900">
+            <span className="text-base font-din-medium text-gray-900">
               Dettagli
             </span>
             <div className="flex items-center gap-2">
-              <span className="text-sm text-orange-500 font-medium">
+              <span className="text-sm text-orange-500 font-din-medium">
                 Leggi tutto
               </span>
               <ChevronDown
@@ -58,14 +60,20 @@ export const TicketDetails = () => {
         <CollapsibleContent>
           <div className="mt-4 space-y-3">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">Codice Ticket:</span>
-              <span className="text-sm font-mono text-gray-900">
+              <span className="text-sm text-gray-600 font-din-medium">
+                Codice Ticket:
+              </span>
+              <span className="text-sm font-mono font-din-medium text-gray-900">
                 27609/2068346
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">PNR:</span>
-              <span className="text-sm font-mono text-gray-900">ATGARIHA4</span>
+              <span className="text-sm text-gray-600 font-din-medium">
+                PNR:
+              </span>
+              <span className="text-sm font-mono font-din-medium text-gray-900">
+                ATGARIHA4
+              </span>
             </div>
           </div>
         </CollapsibleContent>
