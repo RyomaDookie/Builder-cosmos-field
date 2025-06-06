@@ -11,8 +11,9 @@ interface TicketTimer {
 export const useTicketTimer = (): TicketTimer => {
   const [currentTime, setCurrentTime] = useState<string>("");
   const [activationTime] = useState<Date>(() => {
-    // Set activation time to current time (ticket just activated)
-    return new Date();
+    // Set activation time to 10 minutes before current time
+    const now = new Date();
+    return new Date(now.getTime() - 10 * 60 * 1000);
   });
 
   const [ticketData, setTicketData] = useState<TicketTimer>({
