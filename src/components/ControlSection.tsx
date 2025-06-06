@@ -39,7 +39,7 @@ export const ControlSection = () => {
             <div className="flex justify-center mb-4">
               <div className="bg-white p-4 rounded-lg">
                 <QRCode
-                  value={`ATGARIHA4-27609/2068346-${currentTime}-${activationDate}`}
+                  value={qrCodeValue}
                   size={160}
                   style={{ height: "auto", maxWidth: "100%", width: "100%" }}
                 />
