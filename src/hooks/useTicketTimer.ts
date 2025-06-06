@@ -11,9 +11,8 @@ interface TicketTimer {
 export const useTicketTimer = (): TicketTimer => {
   const [currentTime, setCurrentTime] = useState<string>("");
   const [activationTime] = useState<Date>(() => {
-    // Simulate ticket was activated 30 minutes ago
-    const now = new Date();
-    return new Date(now.getTime() - 30 * 60 * 1000);
+    // Set activation time to current time (ticket just activated)
+    return new Date();
   });
 
   const [ticketData, setTicketData] = useState<TicketTimer>({
@@ -45,12 +44,16 @@ export const useTicketTimer = (): TicketTimer => {
 
       let remainingTimeStr = "0m";
       if (!isExpired) {
-        const remainingMinutes = Math.floor(remainingMs / (1000 * 60));
-        const remainingHours = Math.floor(remainingMinutes / 60);
-        const remainingMins = remainingMinutes % 60;
+        const totalRemainingMinutes = Math.floor(remainingMs / (1000 * 60));
+        const remainingHours = Math.floor(totalRemainingMinutes / 60);
+        const remainingMins = totalRemainingMinutes % 60;
 
         if (remainingHours > 0) {
-          remainingTimeStr = `${remainingHours}h ${remainingMins}m`;
+          if (remainingMins > 0) {
+            remainingTimeStr = `${remainingHours}h ${remainingMins}m`;
+          } else {
+            remainingTimeStr = `${remainingHours}h`;
+          }
         } else {
           remainingTimeStr = `${remainingMins}m`;
         }
