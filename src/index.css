@@ -1,4 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=DIN+Pro:wght@400;500;700&display=swap");
+/* Local DIN Pro Fonts */
+@font-face {
+  font-family: "DIN Pro";
+  src: url("/fonts/DINPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("/fonts/DINPro-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("/fonts/DINPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
