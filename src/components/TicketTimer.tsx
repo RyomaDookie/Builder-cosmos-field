@@ -16,7 +16,7 @@ export const TicketTimer = () => {
         </div>
         <div className="text-sm opacity-90 font-din-medium">
           Attivato il:{" "}
-          <span className="text-base font-din-medium">{activationTime}</span>
+          <span className="text-base font-din-bold">{activationTime}</span>
         </div>
       </div>
     </div>
