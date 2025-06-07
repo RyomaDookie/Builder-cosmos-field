@@ -20,7 +20,7 @@ export default {
     extend: {
       fontFamily: {
         "din-medium": [
-          "DIN Pro",
+          "D-DIN-PRO",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
@@ -28,7 +28,7 @@ export default {
           "sans-serif",
         ],
         "din-bold": [
-          "DIN Pro",
+          "D-DIN-PRO",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
@@ -36,7 +36,7 @@ export default {
           "sans-serif",
         ],
         sans: [
-          "DIN Pro",
+          "D-DIN-PRO",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
