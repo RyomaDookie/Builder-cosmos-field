@@ -1,90 +1,66 @@
 export const WavePattern = () => {
   return (
-    <div className="mx-4 my-4 overflow-hidden">
-      <svg
-        width="100%"
-        height="40"
-        viewBox="0 0 400 40"
-        className="opacity-30"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <style>
-            {`
-              @keyframes moveWave {
-                0% {
-                  transform: translateX(-100%);
-                }
-                100% {
-                  transform: translateX(100%);
-                }
-              }
-              
-              .wave-line {
-                animation: moveWave 3s linear infinite;
-              }
-              
-              .wave-line-2 {
-                animation: moveWave 3.5s linear infinite;
-                animation-delay: -1s;
-              }
-              
-              .wave-line-3 {
-                animation: moveWave 4s linear infinite;
-                animation-delay: -2s;
-              }
-            `}
-          </style>
-        </defs>
+    <div className="mx-4 my-4 overflow-hidden relative h-10">
+      <style jsx>{`
+        @keyframes movePattern {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
 
-        {/* Multiple animated wave lines with different speeds */}
-        <g className="wave-line">
-          <path
-            d="M0,20 Q100,5 200,20 T400,20"
-            fill="none"
-            stroke="#d1d5db"
-            strokeWidth="2"
-          />
-        </g>
+        .pattern-line {
+          animation: movePattern 4s linear infinite;
+        }
 
-        <g className="wave-line-2">
-          <path
-            d="M0,25 Q100,10 200,25 T400,25"
-            fill="none"
-            stroke="#d1d5db"
-            strokeWidth="2"
-          />
-        </g>
+        .pattern-line-2 {
+          animation: movePattern 5s linear infinite;
+          animation-delay: -1s;
+        }
 
-        <g className="wave-line-3">
-          <path
-            d="M0,15 Q100,0 200,15 T400,15"
-            fill="none"
-            stroke="#d1d5db"
-            strokeWidth="2"
-          />
-        </g>
+        .pattern-line-3 {
+          animation: movePattern 6s linear infinite;
+          animation-delay: -2s;
+        }
+      `}</style>
 
-        {/* Additional decorative elements for more visual interest */}
-        <g className="wave-line" style={{ animationDelay: "-0.5s" }}>
-          <circle cx="50" cy="20" r="2" fill="#d1d5db" opacity="0.5" />
-          <circle cx="150" cy="25" r="1.5" fill="#d1d5db" opacity="0.7" />
-          <circle cx="250" cy="15" r="1" fill="#d1d5db" opacity="0.6" />
-          <circle cx="350" cy="30" r="1.5" fill="#d1d5db" opacity="0.5" />
-        </g>
+      {/* Multiple animated pattern layers with different speeds */}
+      <div className="pattern-line absolute inset-0 opacity-30">
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAABQCAYAAAAmHZ9RAAAECklEQVR4nO3BAQ0AAADCoPdPbQ43oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOADEzUAAWjq4t0AAAAASUVORK5CYII="
+          alt="Zigzag pattern"
+          className="w-full h-full object-cover object-repeat-x"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40'%3E%3Cpath d='M0,20 L20,5 L40,20 L60,5 L80,20 L100,5 L120,20 L140,5 L160,20 L180,5 L200,20 L220,5 L240,20 L260,5 L280,20 L300,5 L320,20 L340,5 L360,20 L380,5 L400,20' fill='none' stroke='%23E5B4B7' stroke-width='3'/%3E%3C/svg%3E")`,
+            backgroundRepeat: "repeat-x",
+            backgroundSize: "400px 40px",
+          }}
+        />
+      </div>
 
-        <g className="wave-line-2" style={{ animationDelay: "-1.5s" }}>
-          <circle cx="75" cy="30" r="1" fill="#d1d5db" opacity="0.4" />
-          <circle cx="175" cy="10" r="2" fill="#d1d5db" opacity="0.6" />
-          <circle cx="275" cy="25" r="1.5" fill="#d1d5db" opacity="0.5" />
-        </g>
+      <div className="pattern-line-2 absolute inset-0 opacity-25">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40'%3E%3Cpath d='M0,25 L20,10 L40,25 L60,10 L80,25 L100,10 L120,25 L140,10 L160,25 L180,10 L200,25 L220,10 L240,25 L260,10 L280,25 L300,10 L320,25 L340,10 L360,25 L380,10 L400,25' fill='none' stroke='%23D1A3A6' stroke-width='2'/%3E%3C/svg%3E")`,
+            backgroundRepeat: "repeat-x",
+            backgroundSize: "400px 40px",
+          }}
+        />
+      </div>
 
-        <g className="wave-line-3" style={{ animationDelay: "-2.5s" }}>
-          <circle cx="100" cy="15" r="1" fill="#d1d5db" opacity="0.5" />
-          <circle cx="200" cy="30" r="1.5" fill="#d1d5db" opacity="0.4" />
-          <circle cx="300" cy="20" r="1" fill="#d1d5db" opacity="0.6" />
-        </g>
-      </svg>
+      <div className="pattern-line-3 absolute inset-0 opacity-20">
+        <div
+          className="w-full h-full"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40'%3E%3Cpath d='M0,15 L20,0 L40,15 L60,0 L80,15 L100,0 L120,15 L140,0 L160,15 L180,0 L200,15 L220,0 L240,15 L260,0 L280,15 L300,0 L320,15 L340,0 L360,15 L380,0 L400,15' fill='none' stroke='%23C7969A' stroke-width='2'/%3E%3C/svg%3E")`,
+            backgroundRepeat: "repeat-x",
+            backgroundSize: "400px 40px",
+          }}
+        />
+      </div>
     </div>
   );
 };
