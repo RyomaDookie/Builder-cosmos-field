@@ -63,7 +63,7 @@ export const ControlSection = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-orange-500" />
-                <span className="text-lg font-mono font-din-bold text-gray-900">
+                <span className="text-lg font-mono font-din-bold text-orange-500">
                   {currentTime}
                 </span>
               </div>
